@@ -1,0 +1,61 @@
+<div class="card">
+  <div class="card-header">
+    <h2><%= @acomodacao.titulo %></h2>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <b>Capacidade:</b>
+        <%= @acomodacao.capacidade %>
+      </div>
+      <div class="col">
+        <b>Preço:</b>
+        <%= @acomodacao.preco %>
+      </div>
+      <div class="col">
+        <b>Tipo:</b>
+        <%= tipo_em_texto(@acomodacao.tipo) %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <b>Logradouro:</b>
+        <%= @acomodacao.logradouro %>
+      </div>
+      <div class="col">
+        <b>Número:</b>
+        <%= @acomodacao.numero %>
+      </div>
+      <div class="col">
+        <b>Complemento:</b>
+        <%= @acomodacao.complemento %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <b>Bairro:</b>
+        <%= @acomodacao.bairro %>
+      </div>
+      <div class="col">
+        <b>Cidade:</b>
+        <%= @acomodacao.cidade %>
+      </div>
+      <div class="col">
+        <b>Estado:</b>
+        <%= @acomodacao.estado %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <b>Descrição:</b>
+        <p><%= @acomodacao.descricao %></p>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer d-flex justify-content-between">
+    <%= link_to 'Listagem', acomodacoes_path, class: 'btn btn-secondary' %>
+    <%= link_to 'Excluir', acomodacao_path(@acomodacao), method: :delete, data: { confirm: 'Tem certeza?' },
+                class: 'btn btn-danger' %>
+    <%= link_to 'Editar', edit_acomodacao_path(@acomodacao), class: 'btn btn-primary' %>
+  </div>
+</div>
