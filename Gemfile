@@ -40,6 +40,8 @@ gem 'bootstrap', '~> 4.1', '>= 4.1.3'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
 gem 'jquery-rails'
 gem 'rack-cors', require: 'rack/cors'
+gem 'mini_magick'
+gem 'aws-sdk-s3', require: false
 
 group :development, :test do
   gem 'awesome_print', '~> 1.8'

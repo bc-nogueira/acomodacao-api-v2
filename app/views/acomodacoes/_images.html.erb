@@ -1,0 +1,20 @@
+<% if acomodacao.files.empty? %>
+  <h5>Essa acomodação não possui fotos.</h5>
+<% else %>
+  <h4>Imagens:</h4>
+
+  <div class="d-flex justify-content-around flex-wrap">
+    <% acomodacao.files.each do |file| %>
+      <div class="card mt-4" style="width: 25rem;">
+        <%= image_tag url_for(file), class: 'card-img-top'  %>
+        <div class="card-body text-center">
+          <%= link_to 'Excluir', destroy_image_acomodacao_path(acomodacao, file_id: file), method: :delete,
+                      data: { confirm: 'Tem certeza?' }, class: 'btn btn-danger' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<br /><br />
+<%= link_to 'Adicionar imagens', add_images_acomodacao_path(acomodacao), class: 'btn btn-info' %>

@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header">
+    <h3>Adicionando imagens para <%= @acomodacao.titulo %></h3>
+  </div>
+  <%= form_with model: @acomodacao, url: save_images_acomodacao_path(@acomodacao), method: :post, local: true do |f| %>
+    <div class="card-body">
+      <%= f.file_field :files, multiple: true %><br /><br />
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+      <%= f.submit 'Carregar', class: 'btn btn-success' %>
+      <%= link_to 'Voltar', :back, class: 'btn btn-secondary' %>
+    </div>
+  <% end %>
+</div>

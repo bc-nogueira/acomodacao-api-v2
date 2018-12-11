@@ -9,6 +9,7 @@
         <tr>
           <th scope="col">Título</th>
           <th scope="col">Capacidade</th>
+          <th scope="col">Fotos</th>
           <th scope="col">Preço</th>
           <th scope="col">Cidade</th>
           <th scope="col">Estado</th>
@@ -20,6 +21,7 @@
           <tr>
             <td><%= acomodacao.titulo %></td>
             <td><%= acomodacao.capacidade %></td>
+            <td><%= acomodacao.files.count %></td>
             <td><%= acomodacao.preco %></td>
             <td><%= acomodacao.cidade %></td>
             <td><%= acomodacao.estado %></td>
