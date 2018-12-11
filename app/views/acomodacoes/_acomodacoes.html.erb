@@ -1,0 +1,37 @@
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">Título</th>
+    <th scope="col">Capacidade</th>
+    <th scope="col">Fotos</th>
+    <th scope="col">Preço</th>
+    <th scope="col">Cidade</th>
+    <th scope="col">Estado</th>
+    <th scope="col">Ações</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% acomodacoes.each do |acomodacao| %>
+    <tr>
+      <td><%= acomodacao.titulo %></td>
+      <td><%= acomodacao.capacidade %></td>
+      <td><%= acomodacao.files.count %></td>
+      <td><%= acomodacao.preco %></td>
+      <td><%= acomodacao.cidade %></td>
+      <td><%= acomodacao.estado %></td>
+      <td class="d-flex justify-content-around">
+        <%= link_to acomodacao_path(acomodacao), class: 'btn btn-info w-25' do %>
+          <%= fa_icon 'search' %>
+        <% end %>
+        <%= link_to edit_acomodacao_path(acomodacao), class: 'btn btn-primary w-25' do %>
+          <%= fa_icon 'pencil-square-o' %>
+        <% end %>
+        <%= link_to acomodacao_path(acomodacao), method: :delete, data: { confirm: 'Tem certeza?' },
+                    class: 'btn btn-danger w-25' do %>
+          <%= fa_icon 'trash' %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
