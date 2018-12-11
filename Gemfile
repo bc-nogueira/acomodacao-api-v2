@@ -5,8 +5,6 @@ ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -43,9 +41,12 @@ gem 'rack-cors', require: 'rack/cors'
 gem 'mini_magick'
 gem 'aws-sdk-s3', require: false
 
+gem 'pg'
+
 group :development, :test do
   gem 'awesome_print', '~> 1.8'
   gem 'pry', '~> 0.12.2'
+  gem 'sqlite3'
 end
 
 group :development do
