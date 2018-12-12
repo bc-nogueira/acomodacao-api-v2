@@ -11,18 +11,8 @@ module Api::V1
     # GET /acomodacoes/1
     def show
       @acomodacao = Acomodacao.find(params[:id])
-      # binding.pry
-      # file.service_url
-      teste = {}
-      teste = @acomodacao.files.map do |file|
-        file.service_url
-      end
-      teste2 = { urls: teste }
-      # binding.pry
-
-      # render json: @acomodacao, testando: teste.to_json
-
-      render json: { acomodacao: @acomodacao, urls: teste }
+      urls = @acomodacao.files.map { |file| file.service_url }
+      render json: { acomodacao: @acomodacao, urls: urls }
     end
 
     # POST /acomodacoes
