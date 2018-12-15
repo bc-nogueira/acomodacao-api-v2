@@ -59,6 +59,6 @@ class AcomodacoesController < ApplicationController
 
   def acomodacao_params
     params.require(:acomodacao).permit(:titulo, :descricao, :capacidade, :preco, :tipo, :logradouro, :numero,
-                                       :complemento, :bairro, :cidade, :estado)
+                                       :complemento, :bairro, :cidade, :estado, :latitude, :longitude)
   end
 end
