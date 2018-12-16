@@ -1,12 +1,3 @@
-<% provide :head_tags do %>
-  <meta name='turbolinks-visit-control' content='reload'>
-  <script>
-      document.addEventListener("DOMContentLoaded", function(){
-          initMap(<%=@acomodacao.latitude%>, <%=@acomodacao.longitude%>)
-      });
-  </script>
-<% end %>
-
 <div class="card">
   <div class="card-header">
     <h2><%= @acomodacao.titulo %></h2>
@@ -70,10 +61,6 @@
         <p><%= @acomodacao.descricao %></p>
       </div>
     </div>
-    <hr />
-
-    <div id="mapShow"></div>
-
     <hr />
     <%= render partial: 'acomodacoes/images', locals: { acomodacao: @acomodacao } %>
   </div>
